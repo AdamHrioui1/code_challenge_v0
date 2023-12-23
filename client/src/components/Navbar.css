@@ -1,0 +1,123 @@
+.navbar {
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.navbar ul {
+    width: 100%;
+
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.navbar ul li a {
+    padding: 10px;
+    color: #000;
+}
+
+.logout_container {
+    display: inline-block;
+    margin-left: auto;
+}
+
+.logout_container button {
+    padding: 6px 10px;
+
+    background-color: #000;
+    color: #fff;
+
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.burger {
+    position: relative;
+    width: 30px;
+    height: 10px;
+    margin-left: auto;
+
+    display: none;
+    cursor: pointer;
+}
+
+.burger span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 30px;
+    height: 2px;
+
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+
+    border-radius: 2px;
+    background-color: #000;
+    transition: .4s ease;
+}
+
+.burger span:nth-child(1) {
+    top: 20%;
+}
+
+.burger span:nth-child(2) {
+    top: 80%;
+}
+
+.burger.active > span:nth-child(1) {
+    top: 50%;
+    left: 0%;
+    transform: rotate(45deg) translate(0%, 0%);
+}
+
+.burger.active > span:nth-child(2) {
+    top: 50%;
+    left: 0%;
+    transform: rotate(-45deg) translate(0%, 0%);
+}
+
+@media (max-width: 825px) {
+    .burger {
+        display: inline-block;
+        z-index: 1000;
+    }
+    
+    .navbar ul {
+        position: absolute;
+        top: -100%;
+        left: 0;
+
+        padding: 40px;
+        width: 100%;
+        flex-direction: column;
+
+        background-color: #fff;
+        box-shadow: 2px 2px 10px #0000004f;
+
+        transition: all .4s ease;
+    }
+
+    .logout_container {
+        margin-left: 0;
+    }
+    
+    .navbar.active ul {
+        top: 0;
+    }
+
+}
